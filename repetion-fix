@@ -1,0 +1,21 @@
+### Problem
+WooCommerce failed to import products from the German-formatted CSV. Products either didn't import or appeared as "Produkte" without images, prices, or categories.
+
+### Solution Documentation
+
+**Root Cause:**
+- German column headers (e.g., `Bilder`, `Regulärer Preis`) not recognized by WooCommerce
+- Euro symbol (`€`) in price fields
+- Redundant first row breaking column structure
+- Image URLs improperly formatted (spaces/newlines instead of commas)
+
+**Fix Applied:**
+1.  **Removed** the problematic first row.
+2.  **Translated headers** to English (e.g., `Bilder` → `Images`, `Regulärer Preis` → `Regular price`).
+3.  **Cleaned prices** by removing the `€` symbol.
+4.  **Formatted images** correctly: comma-separated URLs within one cell.
+5.  **Simplified CSV** by keeping only essential columns (14 instead of 120+).
+6.  **Added default category** ("Chairs") for all products.
+
+**Result:**
+Clean CSV file that imports successfully into WooCommerce with all product details intact.
