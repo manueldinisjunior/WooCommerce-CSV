@@ -63,4 +63,8 @@ ID, Type, SKU, Name, Published, Is featured?, Visibility in catalog, Short descr
 - Test with a small subset of products first
 - Remove extraneous columns that aren't being used
 
+To convert the file from Numbers to CSV the website below was used
+
+https://cloudconvert.com/numbers-to-csv
+
 This solution successfully imported all 5 products with correct names, images, prices, and categories.
